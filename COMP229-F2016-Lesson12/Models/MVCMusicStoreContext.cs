@@ -16,6 +16,11 @@ namespace COMP229_F2016_Lesson12.Models
         public virtual DbSet<Artist> Artists { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
 
+        // New Features - Shopping Cart and Checkout
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Album>()
