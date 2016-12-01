@@ -2,10 +2,17 @@
 @model Album
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Album - " + Model.Title;
 }
 
-<h2>Album: @Model.Title</h2>
-<h2>Album: @Model.Price</h2>
-<h2>Album: @Model.AlbumArtUrl</h2>
+<div id="album-details">
+    <h1>Title: @Model.Title</h1>
+    <h2>Genre: @Model.Genre.Name</h2>
+    <h2>Artist: @Model.Artist.Name</h2>
+    <h2>Price: @Model.Price</h2>
+    <h2>Album Art: @Model.AlbumArtUrl</h2>
 
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.AlbumId }, "");
+    </p>
+</div>
